@@ -1,3 +1,8 @@
+这是我改了个人配置的，因为我有很多电脑(并没有)，我不想拿U盘拷来拷去的
+
+这是我改了个人配置的，因为我有很多电脑(并没有)，我不想拿U盘拷来拷去的
+
+这是我改了个人配置的，因为我有很多电脑(并没有)，我不想拿U盘拷来拷去的
 <p align="right"><a title="New «NexT» 6.0.0 version [Reloaded]" href="https://github.com/theme-next/hexo-theme-next">NexT v6.0.0 here :triangular_flag_on_post:</a></p>
 
 <h1 align="center">NexT</h1>
