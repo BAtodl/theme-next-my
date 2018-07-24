@@ -31,7 +31,7 @@ favicon:
   medium: /images/favicon-32x32-next.png
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
-  #android_manifest: /images/manifest.json
+  # android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
@@ -83,7 +83,7 @@ index_with_subtitle: false
 
 
 # ---------------------------------------------------------------
-# Menu Settings
+# Menu Settings  | 菜单设置
 # ---------------------------------------------------------------
 
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
@@ -91,43 +91,45 @@ index_with_subtitle: false
 # Key is the name of menu item. If translate for this menu will find in languages - this translate will be loaded; if not - Key name will be used. Key is case-senstive.
 # Value before `||` delimeter is the target link.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
-menu:
+menu: # 设置菜单的显示文本
+# home: 主页(默认不需要手动新建页面) archives:归档页(默认不需要手动新建页面) 【翻译查看language文件夹下的zh-Hans.yml,如果是自己新建的菜单要在前面的翻译设置文件中加上新建的菜单】
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
+  about: /about/ || user
+  tags: /tags/ || tags
+  categories: /categories/ || th
   archives: /archives/ || archive
-  #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  # schedule: /schedule/ || calendar
+  # sitemap: /sitemap.xml || sitemap
+  # commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
-menu_icons:
+menu_icons: # 设置菜单的对应图标
   enable: true
 
 
 # ---------------------------------------------------------------
-# Scheme Settings
+# Scheme Settings | 主题设定
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
-#scheme: Mist
-#scheme: Pisces
-#scheme: Gemini
+# 1. 默认，2. 紧凑，3. 双栏 4. 双栏(左栏靠左，内容区域更大)
+# scheme: Muse
+# scheme: Mist
+# scheme: Pisces
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
-# Sidebar Settings
+# Sidebar Settings | 侧栏设置(１．默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示，并放置于右侧位置．２．已知侧栏在 use motion: false 的情况下不会展示)
 # ---------------------------------------------------------------
 
-# Social Links.
+# Social Links. | 社交账号
 # Usage: `Key: permalink || icon`
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
+social:
+  GitHub: https://github.com/batodl || github
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -140,6 +142,7 @@ scheme: Muse
 
 social_icons:
   enable: true
+  GitHub: github
   icons_only: false
   transition: false
 
@@ -151,10 +154,10 @@ links_layout: block
 #links:
   #Title: http://example.com/
 
-# Sidebar Avatar
-# in theme directory(source/images): /images/avatar.gif
-# in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+# Sidebar Avatar | 设置头像
+# in theme directory(source/images): /images/avatar.gif | 图片在source/images文件下的地址
+# in site  directory(source/uploads): /uploads/avatar.gif | 图片在source/uploads文件下的地址
+avatar: /images/avatar.gif
 
 # Table Of Contents in the Sidebar
 toc:
@@ -173,17 +176,19 @@ toc:
 #creative_commons:
 
 sidebar:
+  # siderbar position 侧栏的显示位置
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
   position: left
-  #position: right
+  # position: right
 
+  # sidebar display 侧栏的显示时机
   # Sidebar Display, available value (only for Muse | Mist):
-  #  - post    expand on posts automatically. Default.
-  #  - always  expand for all pages automatically
-  #  - hide    expand only when click on the sidebar toggle icon.
-  #  - remove  Totally remove sidebar including sidebar toggle.
-  display: post
-  #display: always
+  #  - post    expand on posts automatically. Default. | 默认，只在文章页面(拥有目录列表)时显示
+  #  - always  expand for all pages automatically |　在所有页面中都显示
+  #  - hide    expand only when click on the sidebar toggle icon.　｜　在所有页面中都隐藏（可以手动展开）
+  #  - remove  Totally remove sidebar including sidebar toggle.　｜　完全移除
+  # display: post
+  display: always
   #display: hide
   #display: remove
 
@@ -197,7 +202,7 @@ sidebar:
   scrollpercent: false
 
   # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: false
+  onmobile: true
 
 
 # ---------------------------------------------------------------
@@ -213,10 +218,10 @@ save_scroll: false
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
 
-# Automatically Excerpt. Not recommend.
-# Please use <!-- more --> in the post to control excerpt accurately.
+# Automatically Excerpt. Not recommend. | 自动形成摘要(摘要长度150，默认不推荐，不过我很好奇，先用一段时间再说)
+# Please use <!-- more --> in the post to control excerpt accurately.  | 推荐在文章中使用‘<!-- more -->’来显示阅读全文按钮
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Post meta display settings
@@ -234,6 +239,9 @@ post_wordcount:
   min2read: false
   totalcount: false
   separated_meta: true
+
+# 文章更新于什么时间
+display_modified: true
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -277,7 +285,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night
 
 
 # ---------------------------------------------------------------
